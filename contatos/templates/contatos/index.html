@@ -1,0 +1,390 @@
+{% extends 'base_danielmata.html' %}
+{% load static %}
+
+{% block conteudo %}
+<!-- MENU DE NAVEGAÇÃO -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <!-- Logo do currículo -->
+        <a class="navbar-brand" href="{% url 'index' %}">
+            Daniel Mata
+        </a>
+
+        <!-- Botão de menu responsivo para dispositivos móveis -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Itens do menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a href="#intro" class="nav-link smoothScroll">Introdução</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#about" class="nav-link smoothScroll">Sobre mim</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link smoothScroll">Depoimentos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link smoothScroll">Contato</a>
+                </li>
+            </ul>
+
+            <!-- Botão para fazer o download do currículo em PDF -->
+            <div class="mt-lg-0 mt-3 mb-4 mb-lg-0">
+                <a href="{% static 'vendor/curriculo.pdf' %}" class="custom-btn btn" download>Download CV</a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- SEÇÃO DE INTRODUÇÃO -->
+<section class="hero d-flex flex-column justify-content-center align-items-center" id="intro">
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Imagem do currículo -->
+            <div class="mx-auto col-lg-5 col-md-5 col-10">
+                <!-- Adicione a classe "image-container" para criar uma borda e sombra em torno da imagem -->
+                <div class="image-container">
+                    <img src="{% static 'vendor/images/danielmataa.jpg' %}" class="img-fluid" alt="Daniel Mata">
+                </div>
+            </div>
+
+            <!-- Informações de introdução do currículo -->
+            <div class="d-flex flex-column justify-content-center align-items-center col-lg-7 col-md-7 col-12">
+                <div class="hero-text">
+
+                    <!-- Título da introdução -->
+                    <h1 class="hero-title">👋 Daniel Mata, Desenvolvedor de Software</h1>
+
+                    <!-- Email para contato -->
+                    <a href="mailto:d7mata@gmail.com" class="email-link">
+                        d7mata@gmail.com
+                    </a>
+
+                </div>
+            </div>
+            <div>
+                <!-- Informações pessoais -->
+                <ul class="mt-4 mb-5 mb-lg-0 profile-list list-unstyled">
+                    <li><strong>Nome: </strong>Daniel Batista da Mata</li>
+
+                    <li><strong>Data de Nascimento: </strong> 22 Dezembro 1997</li>
+
+                    <li><strong>Email: </strong>d7mata@gmail.com</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SEÇÃO SOBRE MIM -->
+<section class="about section-padding" id="about">
+    <div class="container">
+        <div class="row">
+
+            <!-- Descrição pessoal e informações do currículo -->
+            <div class="col-lg-6 col-md-6 col-12">
+                <h3 class="mb-4">Sobre mim</h3>
+
+                <!-- Parágrafos descrevendo a trajetória profissional -->
+                <p>Olá! Meu nome é Daniel e sou um entusiasta de tecnologia desde a infância. Meu
+                    interesse em computadores começou cedo, e com os anos, transformei essa paixão em uma carreira
+                    na área da T.I. Comecei a minha jornada profissional trabalhando em uma loja de informática,
+                    fazendo manutenção de computadores e instalações de internet, e esse foi o começo da minha
+                    jornada no mundo da tecnologia.</p>
+
+                <p>Após essa experiência, trabalhei no suporte ao cliente para um site de vendas e continuei a
+                    aprimorar meus conhecimentos técnicos, ajudando a instalar a internet em domicílios e negócios.
+                    Em 2022, decidi ampliar minhas habilidades e comecei a estudar programação. Aprendi Python,
+                    HTML, CSS, SQL, e também me familiarizei com EC2 da AWS e Git/GitHub.</p>
+
+                <p>Atualmente, estou cursando Análise e Desenvolvimento de Sistemas e também trabalho em um estágio
+                    em um hospital onde cuido de todas as questões de T.I. Adoro o trabalho que faço e sempre estou
+                    aberto a aprender coisas novas.</p>
+            </div>
+
+
+        </div>
+
+        <!-- Terceira seção de informações sobre o currículo -->
+        <div class="row about-third">
+            <div class="col-lg-4 col-md-4 col-12">
+                <!-- Filosofia pessoal -->
+                <h3>Minha Filosofia</h3>
+                <p>Acredito firmemente que definir um objetivo e perseguir diretamente até atingi-lo é fundamental
+                    para o sucesso. Eu valorizo a importância do processo de aprendizado e acredito que a repetição
+                    leva à perfeição. A curiosidade tem sido meu motor ao longo da minha jornada, me levando sempre
+                    a expandir meus horizontes e enfrentar novos desafios.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <!-- Experiência profissional -->
+                <h3>Minha Experiência</h3>
+                <p>Minha jornada tem sido cheia de aprendizado e crescimento, desde a manutenção de computadores até
+                    o trabalho com desenvolvimento de software. Esta diversidade de experiências tem sido
+                    fundamental para o meu desenvolvimento pessoal e profissional.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-12">
+                <!-- Expectativas futuras -->
+                <h3>Meu Futuro</h3>
+                <p>Eu tenho grandes expectativas para o futuro. Meu sonho é conseguir um trabalho como desenvolvedor
+                    remoto, onde eu possa usar minhas habilidades, aprender novas e contribuir para o mundo da
+                    tecnologia.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SEÇÃO DE DEPOIMENTOS -->
+<section class="testimonials section-padding" id="testimonials">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-12">
+                <!-- Título dos depoimentos -->
+                <h3 class="mb-5 text-center">Outros projetos que já fiz</h3>
+
+                <!-- Carousel com os depoimentos -->
+                <div class="owl-carousel owl-theme" id="testimonials-carousel">
+                    <div class="item">
+                        <!-- Primeiro depoimento -->
+                        <div class="testimonials-thumb d-flex">
+                            <a href="{% url 'index_contatos' %}">
+                                <div class="testimonials-image">
+                                    <img src="{% static 'vendor/images/logopython.png' %}" class="img-fluid" alt="img">
+                                </div>
+                            </a>
+
+
+                            <div class="testimonials-info">
+                                <a href="{% url 'index_contatos' %}">
+                                    <h6 class="mb-0">Cadastramento de Clientes</h6>
+                                </a>
+
+                                <p>Este é um pequeno projeto que desenvolvi durante o periodo que eu estava aprendendo
+                                    Python. Nele pude aplicar varios conceitos que aprendi no ambito de backend.</p>
+                                <span>Desenvolvido em Dez/2022</span><br><br>
+                                <a href="{% url 'index_contatos' %}" target="_blank">
+                                    <i class="fas fa-database"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SEÇÃO DE PERGUNTAS FREQUENTES -->
+<section class="faq section-padding">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12 col-12">
+
+                <!-- Título das perguntas frequentes -->
+                <h3 class="mb-5">Perguntas Frequentes</h3>
+
+                <!-- Lista de perguntas e respostas em formato de acordeão -->
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Quais linguagens de programação você domina?
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                             data-parent="#accordionExample">
+                            <div class="card-body">
+                                <!-- Resposta à pergunta sobre linguagens de programação -->
+                                <p>Iniciei meus estudos com Python e tenho conhecimento do básico ao avançado. Além
+                                    disso, estou desenvolvendo um site com o framework Django e também um programa em
+                                    Java para meu estágio atual.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Outras perguntas e respostas -->
+                    <div class="card">
+                        <!-- Pergunta 2 -->
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Você tem experiência com trabalho em equipe em projetos de desenvolvimento?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                             data-parent="#accordionExample">
+                            <div class="card-body">
+                                <!-- Resposta à pergunta sobre experiência em trabalho em equipe -->
+                                <p>Sim, no meu atual estágio no hospital, além de assumir toda responsabilidade de T.I,
+                                    também estou desenvolvendo um site em Django e um programa Java. Isso me proporciona
+                                    grande experiência em trabalho em equipe.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Perguntas adicionais -->
+                    <div class="card">
+                        <!-- Pergunta 3 -->
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                    Como você lida com prazos e pressão no trabalho?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                             data-parent="#accordionExample">
+                            <div class="card-body">
+                                <!-- Resposta à pergunta sobre lidar com prazos e pressão -->
+                                <p>Trabalho bem sob pressão. No hospital, onde sou o responsável pela T.I, a tecnologia
+                                    não pode parar, pois o hospital não pode parar. Trabalhar nesse ambiente me ensinou
+                                    a lidar com pressão e prazos apertados.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="card">
+                        <div class="card-header" id="headingFour">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Você poderia nos dar um exemplo de um problema complexo que resolveu?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                             data-parent="#accordionExample">
+                            <div class="card-body">
+                                <!-- Resposta à pergunta sobre resolução de problemas complexos -->
+                                <p>Sim, faço parte da equipe de T.I de um hospital e sou responsável pelo bom
+                                    funcionamento de toda a rede de computação. Quase todos os dias, tenho que lidar e
+                                    resolver problemas complexos para garantir que os serviços do hospital não sejam
+                                    interrompidos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 5 -->
+                    <div class="card">
+                        <div class="card-header" id="headingFive">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    Qual foi o projeto do qual você mais se orgulha e por quê?
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                             data-parent="#accordionExample">
+                            <div class="card-body">
+                                <!-- Resposta à pergunta sobre projeto de que se orgulha -->
+                                <p>Atualmente, estou desenvolvendo um site e um programa de OS para o hospital onde
+                                    estou estagiando. É um grande desafio e estou aprendendo muito.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SEÇÃO DE CONTATO -->
+<section class="contact section-padding pt-0" id="contact">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-6 col-12">
+                <!-- Formulário de contato -->
+                <form action="#" method="get" class="contact-form webform" role="form">
+
+                    <div class="form-group d-flex flex-column-reverse">
+                        <label for="cf-name" class="webform-label">Seu Nome</label>
+                        <input type="text" class="form-control" name="cf-name" id="cf-name" placeholder="Seu Nome">
+                    </div>
+
+                    <div class="form-group d-flex flex-column-reverse">
+                        <label for="cf-email" class="webform-label">Seu Email</label>
+                        <input type="email" class="form-control" name="cf-email" id="cf-email" placeholder="Seu Email">
+                    </div>
+
+                    <div class="form-group d-flex flex-column-reverse">
+                        <label for="cf-message" class="webform-label">Mensagem</label>
+                        <textarea class="form-control" rows="5" name="cf-message" id="cf-message"
+                                  placeholder="Sua Mensagem"></textarea>
+                    </div>
+
+                    <button type="submit" class="form-control" id="submit-button" name="submit">Enviar</button>
+                </form>
+            </div>
+
+            <div class="mx-auto col-lg-4 col-md-6 col-12">
+                <!-- Informações de contato -->
+                <h3 class="my-4 pt-4 pt-lg-0">Entre em contato comigo</h3>
+
+                <!-- Número de telefone -->
+                <p class="mb-1">(77)99811-5814</p>
+
+                <!-- Endereço de email -->
+                <p>
+                    <a href="mailto:d7mata@gmail.com">
+                        d7mata@gmail.com
+                        <i class="fas fa-arrow-right custom-icon"></i>
+                    </a>
+                </p>
+
+                <!-- Links para redes sociais -->
+                <ul class="social-links mt-2">
+                    <li><a href="https://github.com/danielbmata" rel="noopener" class="fab fa-github"></a></li>
+                    <li><a href="https://www.linkedin.com/in/danielbmata/" rel="noopener" class="fab fa-linkedin"></a>
+                    </li>
+
+                </ul>
+
+                <!-- Direitos autorais -->
+                <p class="copyright-text mt-5 pt-3">Copyright &copy; 2023 Daniel Mata</p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

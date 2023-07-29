@@ -1,0 +1,86 @@
+{%extends 'base.html'%}
+
+{%block conteudo%}
+{% if user.is_authenticated %}
+<h1 class="mt-5">Clientes Cadastrados</h1>
+<br>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Telefone</th>
+        <th>Categoria</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    <!-- FAZENDO UM LAÇO FOR DOS CONTATOS COM AS CHAVES DO DJANGO -->
+        <!-- E TAMBEM UMA CONDICIONAL IF PARA SE O PUBLICADO FOR TRUE EXIBE O CONTATO SE NAO, NAO EXIBE. -->
+    {% for contato in contatos %}
+        <tr>
+            <td>{{ contato.id }}</td>
+            <td>
+                <a href="{% url 'ver_contato' contato.id %}">{{ contato.nome }}</a>
+            </td>
+            <td>{{ contato.sobrenome }}</td>
+            <td>{{ contato.telefone }}</td>
+            <td>{{ contato.categoria }}</td>
+        </tr>
+    {% endfor %}
+
+
+    </tbody>
+</table>
+
+
+<!--BOTÕES DE PAGINAÇÃO-->
+<!--SE A PAGINA ATUAL FOR IGUAL A PAGINA QUE ESTÁ ITERANDO COM O FOR FICA COM O ACTIVE, MARCA QUE TA NELA-->
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% for pagina in contatos.paginator.page_range %}
+            {% if contatos.number == pagina %}
+                <li class="page-item active"><a class="page-link" href="?page={{ pagina }}&termo={{ request.GET.termo }}">{{pagina}}</a></li>
+            {% else %}
+                <li class="page-item"><a class="page-link" href="?page={{ pagina }}&termo={{ request.GET.termo }}">{{pagina}}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+{% else %}
+<br>
+<header>
+    <h1>Bem-vindo!</h1>
+    <p>Você quer manter todos os seus clientes organizados e acessíveis em um só lugar? Você está no lugar certo! Com este sistema, você pode facilmente manter uma lista completa de todos os seus clientes.</p>
+</header>
+
+<section>
+    <h2>Recursos do sistema de cadastramento de clientes:</h2>
+    <ul>
+        <li>Cadastre clientes com informações como nome, sobrenome, e-mail, telefone, descrição e categoria;</li>
+        <li>Adicione imagens aos seus clientes para uma melhor identificação;</li>
+        <li>Organize todos os seus clientes em uma única lista para fácil acesso;</li>
+        <li>Procure seus clientes por nome, sobrenome ou categoria para encontrar informações rapidamente;</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Faça login ou registre-se agora!</h2>
+    <form>
+        <!-- Inclua seus campos de login e registro aqui -->
+    </form>
+    <div class="d-flex justify-content-end mt-4">
+        <a href="{% url 'login' %}" class="btn btn-primary mr-2">Entrar</a>
+        <a href="{% url 'register' %}" class="btn btn-secondary">Registrar</a>
+    </div>
+    <br>
+</section>
+
+
+
+{% endif %}
+
+{%endblock%}
